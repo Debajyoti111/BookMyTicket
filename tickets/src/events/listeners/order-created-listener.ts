@@ -7,10 +7,10 @@ export class OrderCreatedListener extends Listener<OrderCreateEvent> {
     queueGroupName = "tickets-service";
     async onMessage(data: OrderCreateEvent["data"], msg: Message) {
         const ticket = await Ticket.findById(data.ticket.id);
-        console.log("Order created Listener");
         if(!ticket) throw new BadRequestError("Ticket not found");
         ticket.set({orderId: data.id});
         await ticket.save();
+        console.log(ticket);
         new TicketUpdatedPublisher(this.client).publish({
             id: ticket.id,
             title: ticket.title,

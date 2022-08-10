@@ -12,7 +12,7 @@ const LandingPage = ({ currentUser, tickets }) => {
     )
   });
   return (
-    <div className='container'>
+    currentUser? (tickets.length>0?((<div className='container'>
           <div style={{margin:"8vh 15vh", backgroundColor:"purple", color:"white", padding:"2rem",
     borderRadius:"0.5%"}}>
       <h1>Tickets</h1>
@@ -29,7 +29,15 @@ const LandingPage = ({ currentUser, tickets }) => {
         </tbody>
       </table>
     </div>
-    </div>
+    </div>)):(<div className='container' style={{margin:"8vh 15vh", backgroundColor:"purple", color:"white", padding:"2rem",
+    borderRadius:"0.5%", textAlign:"center"}}>
+        <h1> No Tickets Available To See</h1>
+      </div>)):(
+      <div className='container' style={{margin:"8vh 15vh", backgroundColor:"purple", color:"white", padding:"2rem",
+    borderRadius:"0.5%", textAlign:"center"}}>
+        <h1> Sign In To See The Tickets</h1>
+      </div>
+    )
 
   )
 };

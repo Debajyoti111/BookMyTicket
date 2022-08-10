@@ -21,7 +21,7 @@ import {
   
       ticket.set({
         status: OrderStatus.Cancelled,
-        orderId: undefined,
+        orderId: "undefined",
       });
       await ticket.save();
   
