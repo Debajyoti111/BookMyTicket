@@ -11,4 +11,4 @@ A ticket booking and management system built using Typescript, Node JS, Docker, 
 To run this program, you need to have Docker and skaffold installed. Then do the following-<br>
 <ul>
   <li> Clone the repository </li>
-  <li> Run the following command on terminal- ```skaffold dev```
+  <li> Run the following command on terminal- <b>skaffold dev</b>
